@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Fill Check list</title>
+        <style>
+            .container{
+                padding: 50px;
+                border: 1px solid gray;
+            }
+            a{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <input type="checkbox" id="A"><a href="#selected">A</a>
+            <input type="checkbox" id="B">B
+            <input type="checkbox" id="C">C
+            <input type="checkbox" id="D"><a href="#date">D</a>
+        </div>
+
+        <div class="container">
+            Please select value
+            <select onclick="fillcheck()" id="selected">
+                <option>-</option>
+                <option>One</option>
+                <option>Two</option>
+                <option>Three</option>
+            </select>
+        </div>
+
+        <div class="container">
+            Please Choose date
+            <input onchange="filldatecheck();" type="date" id="date">
+
+        </div>
+
+
+        <script>
+            function fillcheck()
+            {
+                var value=document.getElementById('selected').value;
+                //var value = $('#selected')[0];
+                if(value!='-')
+                    document.getElementById("A").checked = true;
+                else
+                document.getElementById("A").checked = false;
+            }
+            function filldatecheck()
+            {
+                var value=document.getElementById('date').innerText;
+                document.getElementById("D").checked=true;
+            }
+        </script>
+    </body>
+</html>
